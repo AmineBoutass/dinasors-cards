@@ -33,7 +33,7 @@ function Header() {
             <Link to="/" style={{ textDecoration: "none" }}>
               <Typography
                 variant="h6"
-                color="black"
+                color="white"
                 sx={{ "&:hover": { color: "#ff4081" } }}
               >
                 Home
@@ -58,23 +58,21 @@ function Header() {
               >
                 Contact
               </Typography>
-             
             </Link>
-            
-            <Box
-  sx={{
-    display: "flex",
-    gap: 2,
-    transition: "margin 0.3s ease-in-out",
-    marginLeft: theme === "dark" ? "auto" : 0,
-    marginRight: theme === "dark" ? 0 : "auto",
-  }}
->
-  <IconButton color="inherit" onClick={handleChange}>
-    {theme === "dark" ? <WbSunnyIcon /> : <Brightness4Icon />}
-  </IconButton>
-</Box>
 
+            <Box
+              sx={{
+                display: "flex",
+                gap: 2,
+                transition: "margin 0.3s ease-in-out",
+                marginLeft: theme === "dark" ? "auto" : 0,
+                marginRight: theme === "dark" ? 0 : "auto",
+              }}
+            >
+              <IconButton color="inherit" onClick={handleChange}>
+                {theme === "dark" ? <WbSunnyIcon /> : <Brightness4Icon />}
+              </IconButton>
+            </Box>
           </Box>
         </Toolbar>
       </AppBar>
