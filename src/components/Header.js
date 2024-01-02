@@ -11,6 +11,38 @@ import Brightness4Icon from "@mui/icons-material/Brightness4";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import { useTheme, useThemeUpdate } from "./ThemeProvider";
 
+
+// New Logo component
+const Logo = () => {
+  const handleLogoClick = () => {
+    window.location.reload();
+  };
+
+  return (
+    <div
+      onClick={handleLogoClick}
+      style={{
+        cursor: "pointer",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginLeft: "20px", // Adjust margin as needed
+      }}
+    >
+      <img
+        src="Logo.jpg" // Replace with the path to your logo image
+        alt="Logo"
+        style={{
+          height: "50px", // Adjust the size as needed
+          width: "50px", // Adjust the size as needed
+          borderRadius: "50%", // Make the logo round
+        }}
+      />
+    </div>
+  );
+};
+
+
 function Header() {
   const theme = useTheme();
   const toggleTheme = useThemeUpdate();
@@ -28,7 +60,10 @@ function Header() {
           color: theme === "light" ? "#fff" : "#ddd",
         }}
       >
-        <Toolbar variant="dense" sx={{ justifyContent: "space-between" }}>
+         <Toolbar variant="dense" sx={{ justifyContent: "space-between" }}>
+          {/* Logo */}
+          <Logo />
+        
           <Box sx={{ display: "flex", gap: 2 }}>
             <Link to="/" style={{ textDecoration: "none" }}>
               <Typography

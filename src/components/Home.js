@@ -5,6 +5,37 @@ import { Card, CardContent, Typography, Grid } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+//logo
+
+const Logo = () => {
+  const handleLogoClick = () => {
+    window.location.reload();
+  };
+
+  return (
+    <div
+      onClick={handleLogoClick}
+      style={{
+        cursor: "pointer",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "20px", // Adjust margin as needed
+      }}
+    >
+      <img
+        src="Logo.jpg" // Replace with the path to your logo image
+        alt="Logo"
+        style={{
+          height: "50px", // Adjust the size as needed
+          width: "50px", // Adjust the size as needed
+          borderRadius: "50%", // Make the logo round
+        }}
+      />
+    </div>
+  );
+};
+
 // Custom arrows for slick slider
 const NextArrow = (props) => {
   const { className, style, onClick } = props;
@@ -32,7 +63,6 @@ function Home() {
     "https://example.com/dinosaur3.jpg",
     // Add more dinosaur images as needed
   ];
-  
 
   const sliderSettings = {
     dots: true,
@@ -48,6 +78,8 @@ function Home() {
 
   return (
     <div>
+      {/* Logo */}
+      <Logo />
       {/* Image Slider */}
       <Slider {...sliderSettings}>
         {dinosaurImages.map((image, index) => (
