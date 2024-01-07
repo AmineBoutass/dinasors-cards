@@ -81,6 +81,7 @@ function Home() {
       {/* Logo */}
       <Logo />
       {/* Image Slider */}
+      <h1 style={{ display: "flex", justifyContent: "center" }}>Dinasor</h1>
       <Slider {...sliderSettings}>
         {dinosaurImages.map((image, index) => (
           <div key={index} style={{ display: "flex", justifyContent: "center" }}>
